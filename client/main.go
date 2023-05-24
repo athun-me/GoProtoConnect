@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
+	pb "github.com/athunlal/grpc-demo/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	pb "github.com/athunlal/grpc-demo/proto"
 )
 
 const (
@@ -21,9 +21,11 @@ func main() {
 
 	client := pb.NewGreetServiceClient(conn)
 
-	// name := &pb.NameList{
-	// 	Names: []string{"Athun", "Arjun", "Bob"},
-	// }
+	name := &pb.NameList{
+		Names: []string{"Athun", "Arjun", "Bob"},
+	}
 
-	callSayHello(client)
+	// callSayHello(client)
+	// callSayHelloServerStreaming(client, name)
+	callSayHelloClientStream(client, name)
 }
