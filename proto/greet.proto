@@ -11,7 +11,7 @@ service GreetService{
 
     rpc SayHelloClientStreaming(stream HelloRequst) returns (MessagesList);
 
-    rpc SayHelloBidirectional(stream HelloRequst) returns (stream HelloResponse);
+    rpc SayHelloBidirectionalStreaming(stream HelloRequst) returns (stream HelloResponse);
 
 }
 

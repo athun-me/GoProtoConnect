@@ -24,7 +24,7 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 	pb.RegisterGreetServiceServer(grpcServer, &hellowServer{})
-
+	log.Printf("Server started at %v", lis.Addr())
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Faild to start : %v", err)
 	}
