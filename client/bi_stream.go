@@ -39,8 +39,9 @@ func callSayHellowBidirectionalStreaming(client pb.GreetServiceClient, names *pb
 		if err := stream.Send(req); err != nil {
 			log.Fatalf("Error while sending %v", err)
 		}
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
 	}
+	
 	stream.CloseSend()
 	<-waitc
 	log.Printf("Bidirectional streaming finished ")
