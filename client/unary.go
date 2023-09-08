@@ -9,7 +9,7 @@ import (
 )
 
 func callSayHello(client pb.GreetServiceClient) {
-	
+
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
